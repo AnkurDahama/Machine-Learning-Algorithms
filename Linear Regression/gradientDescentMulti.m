@@ -21,7 +21,9 @@ for iter = 1:num_iters
 
 
 
-
+    RateOfChange = (1/m) * (((X * theta) - y)' * X);
+    
+    theta = theta - (alpha*RateOfChange');
 
 
 

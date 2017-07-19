@@ -30,11 +30,12 @@ sigma = zeros(1, size(X, 2));
 mu = mean(X);
 sigma = std(X)
 
-m = size(X,1);
-mu_matrix = ones(m, 1) * mu;
-sigma_matrix = ones(m, 1)* sigma;
+mu_matrix = X - repmat(mu, length(X), 1);
+sigma_matrix = repmat(sigma, length(X), 1);
+temp_mat = repmat([1 0], length(X), 1);
+sigma_matrix = sigma_matrix + temp_
+X_norm = mu_matrix ./ sigma_matrix;
 
-X_norm = (X - mu_matrix) ./ sigma_matrix;
 % ============================================================
 
 end
